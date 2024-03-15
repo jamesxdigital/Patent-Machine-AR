@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ArScene from './components/ArScene';
 import HomePage from './components/HomePage';
-import TestPage from './components/TestPage'; // Import the TestPage component
+import TestPage from './components/TestPage';
 
 function App() {
   return (
