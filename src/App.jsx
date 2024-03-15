@@ -11,7 +11,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/ar-image-1" element={
           <ArScene
-            targetSrc="/target-image-1.jpg"
+            targetSrc="target-image-1.jpg"
             materialSrc="https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"
           />
         }/>
