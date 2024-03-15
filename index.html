@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>My Simple AR Web Page</title>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/3.3.0/aframe/build/aframe-ar.js"></script>
-</head>
-<body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs="sourceType: webcam;">
-        <!-- Define an AR marker with the Hiro preset -->
-        <a-marker preset="hiro">
-            <!-- Add a 3D box to display over the marker -->
-            <a-box position="0 0.5 0" material="color: red;"></a-box>
-        </a-marker>
-        <a-entity camera></a-entity>
+  <head>
+    <title>Simple AR - A Web based AR for A-Frame</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/gh/akbartus/Simple-AR/dist/0.1.2/simple-ar.min.js"
+      onload="onWasmLoaded();"
+    ></script>
+    <a-scene>
+      <a-entity simple-ar="src: img/target.jpg; minCutOffValue: 1; betaValue:0.1;">
+        <a-plane
+          position="0 0 0"
+          rotation="0 0 0"
+          width="1"
+          height="1"
+          material="src: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"
+        ></a-plane>
+      </a-entity>
+      <a-camera position="0 0 0"></a-camera>
     </a-scene>
-</body>
+  </body>
 </html>
