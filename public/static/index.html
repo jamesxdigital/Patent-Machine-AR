@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Simple AR - A Web based AR for A-Frame</title>
+<head>
+    <title>Simple AR - A Web-based AR for A-Frame</title>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-  </head>
-  <body>
-    <script
-      src="https://cdn.jsdelivr.net/gh/akbartus/Simple-AR/dist/0.1.2/simple-ar.min.js"
-      onload="onWasmLoaded();"
-    ></script>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/gh/akbartus/Simple-AR/dist/0.1.2/simple-ar.min.js" onload="onWasmLoaded();"></script>
     <a-scene>
-      <a-entity simple-ar="src: static/target.jpg; minCutOffValue: 1; betaValue:0.1;">
-        <a-plane
-          position="0 0 0"
-          rotation="0 0 0"
-          width="1"
-          height="1"
-          material="src: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg"
-        ></a-plane>
-      </a-entity>
-      <a-camera position="0 0 0"></a-camera>
+        <a-entity simple-ar="src: static/target.jpg; minCutOffValue: 1; betaValue:0.1;">
+            <!-- Adjust the position and scale as needed to center the image -->
+            <!-- The color and opacity are for debugging; set opacity to 1 or remove it for no transparency -->
+            <a-plane 
+                position="0.1 -0.1 0" 
+                rotation="0 0 0" 
+                width="1" 
+                height="1" 
+                material="src: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg; color: red; opacity: 0.5">
+            </a-plane>
+        </a-entity>
+        <a-camera position="0 0 0"></a-camera>
     </a-scene>
-  </body>
+
+    <script>
+        // Event listeners for AR events can be added here if necessary
+        document.addEventListener('targetFound', function () {
+            console.log("Target found!");
+            // Here you can manipulate the scene when the target is found
+        });
+
+        document.addEventListener('targetLost', function () {
+            console.log("Target lost!");
+            // Here you can manipulate the scene when the target is lost
+        });
+    </script>
+</body>
 </html>
