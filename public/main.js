@@ -178,7 +178,7 @@ function onWasmLoaded() {
     }
   
     const imageToDetect = new Image();
-    imageToDetect.src = `/static/target.jpg`; /////////// Change image
+    imageToDetect.src = `target.jpg`; /////////// Change image
     const canvasDetect = document.querySelector("#canvasImageToDetect");
     let imageToDetectData = undefined;
   
